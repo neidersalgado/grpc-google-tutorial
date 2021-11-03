@@ -24,4 +24,8 @@ compile proto file in go syntax using:
 
 where, $SRC_DIR is your source directory, $DST_DIR destination code, where your code w0ill be generated, and the path where the '-proto' is.
 
+then to execute add_person, navitate to the path were add_person.go file is, an the run:
 
+>go run add_person.go <file_name_addreses>
+
+file_name_addresses is a file were  is being saving the directory of persons

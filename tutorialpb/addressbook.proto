@@ -25,3 +25,7 @@ message Person{
 
     google.protobuf.Timestamp last_updated = 5;
 }
+
+message AddressBook{
+    repeated Person people =1;
+}
