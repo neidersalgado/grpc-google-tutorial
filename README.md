@@ -27,6 +27,10 @@ then to execute add_person, navigate to the path were add_person.go file is, and
 
 >go run add_person.go <file_name_addresses>
 
+then to execute list_person, navigate to the path were list_person.go file is, and then run:
+
+>go run list_person.go <file_name_addresses>
+
 file_name_addresses is a file where is being saved the directory of persons.
 
 for test I'm using "github.com/stretchr/testify/assert" for assertions in tests you can add with
