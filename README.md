@@ -2,6 +2,8 @@
 this is just a  learning project to use gRPC
 
 
+
+
 here I used gRPC so,  it's necessary to install the protobuf compiler,  and was installed on Ubuntu
 
 to install, open terminal, and type the following commands:
@@ -36,3 +38,11 @@ file_name_addresses is a file where is being saved the directory of persons.
 for test I'm using "github.com/stretchr/testify/assert" for assertions in tests you can add with
 
 > go get "github.com/stretchr/testify/assert"
+
+### add mew project Protbuf and gRPC
+
+in gRPCTotorialjff we user and simple protobuf project CLI to add Tasks to do, as new step add a client and a server to implement the methods.
+
+got generate in  folder  file .pb.go use this command 
+
+>protoc -I . todo.proto --go_out=plugins=grpc:. 
