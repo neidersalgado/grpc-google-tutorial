@@ -80,7 +80,7 @@ type TaskList struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Task []*Task `protobuf:"bytes,1,rep,name=task,proto3" json:"task,omitempty"`
+	Tasks []*Task `protobuf:"bytes,1,rep,name=tasks,proto3" json:"tasks,omitempty"`
 }
 
 func (x *TaskList) Reset() {
@@ -115,11 +115,96 @@ func (*TaskList) Descriptor() ([]byte, []int) {
 	return file_todo_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *TaskList) GetTask() []*Task {
+func (x *TaskList) GetTasks() []*Task {
 	if x != nil {
-		return x.Task
+		return x.Tasks
 	}
 	return nil
+}
+
+type Text struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Text string `protobuf:"bytes,1,opt,name=text,proto3" json:"text,omitempty"`
+}
+
+func (x *Text) Reset() {
+	*x = Text{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_todo_proto_msgTypes[2]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Text) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Text) ProtoMessage() {}
+
+func (x *Text) ProtoReflect() protoreflect.Message {
+	mi := &file_todo_proto_msgTypes[2]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Text.ProtoReflect.Descriptor instead.
+func (*Text) Descriptor() ([]byte, []int) {
+	return file_todo_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *Text) GetText() string {
+	if x != nil {
+		return x.Text
+	}
+	return ""
+}
+
+type Void struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *Void) Reset() {
+	*x = Void{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_todo_proto_msgTypes[3]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Void) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Void) ProtoMessage() {}
+
+func (x *Void) ProtoReflect() protoreflect.Message {
+	mi := &file_todo_proto_msgTypes[3]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Void.ProtoReflect.Descriptor instead.
+func (*Void) Descriptor() ([]byte, []int) {
+	return file_todo_proto_rawDescGZIP(), []int{3}
 }
 
 var File_todo_proto protoreflect.FileDescriptor
@@ -129,10 +214,17 @@ var file_todo_proto_rawDesc = []byte{
 	0x64, 0x6f, 0x22, 0x2e, 0x0a, 0x04, 0x54, 0x61, 0x73, 0x6b, 0x12, 0x12, 0x0a, 0x04, 0x74, 0x65,
 	0x78, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x74, 0x65, 0x78, 0x74, 0x12, 0x12,
 	0x0a, 0x04, 0x64, 0x6f, 0x6e, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x52, 0x04, 0x64, 0x6f,
-	0x6e, 0x65, 0x22, 0x2a, 0x0a, 0x08, 0x54, 0x61, 0x73, 0x6b, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x1e,
-	0x0a, 0x04, 0x74, 0x61, 0x73, 0x6b, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x0a, 0x2e, 0x74,
-	0x6f, 0x64, 0x6f, 0x2e, 0x54, 0x61, 0x73, 0x6b, 0x52, 0x04, 0x74, 0x61, 0x73, 0x6b, 0x62, 0x06,
-	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x6e, 0x65, 0x22, 0x2c, 0x0a, 0x08, 0x54, 0x61, 0x73, 0x6b, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x20,
+	0x0a, 0x05, 0x74, 0x61, 0x73, 0x6b, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x0a, 0x2e,
+	0x74, 0x6f, 0x64, 0x6f, 0x2e, 0x54, 0x61, 0x73, 0x6b, 0x52, 0x05, 0x74, 0x61, 0x73, 0x6b, 0x73,
+	0x22, 0x1a, 0x0a, 0x04, 0x54, 0x65, 0x78, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x74, 0x65, 0x78, 0x74,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x74, 0x65, 0x78, 0x74, 0x22, 0x06, 0x0a, 0x04,
+	0x56, 0x6f, 0x69, 0x64, 0x32, 0x4e, 0x0a, 0x05, 0x54, 0x61, 0x73, 0x6b, 0x73, 0x12, 0x24, 0x0a,
+	0x04, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x0a, 0x2e, 0x74, 0x6f, 0x64, 0x6f, 0x2e, 0x56, 0x6f, 0x69,
+	0x64, 0x1a, 0x0e, 0x2e, 0x74, 0x6f, 0x64, 0x6f, 0x2e, 0x54, 0x61, 0x73, 0x6b, 0x4c, 0x69, 0x73,
+	0x74, 0x22, 0x00, 0x12, 0x1f, 0x0a, 0x03, 0x41, 0x64, 0x64, 0x12, 0x0a, 0x2e, 0x74, 0x6f, 0x64,
+	0x6f, 0x2e, 0x54, 0x65, 0x78, 0x74, 0x1a, 0x0a, 0x2e, 0x74, 0x6f, 0x64, 0x6f, 0x2e, 0x54, 0x61,
+	0x73, 0x6b, 0x22, 0x00, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -147,15 +239,21 @@ func file_todo_proto_rawDescGZIP() []byte {
 	return file_todo_proto_rawDescData
 }
 
-var file_todo_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_todo_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_todo_proto_goTypes = []interface{}{
 	(*Task)(nil),     // 0: todo.Task
 	(*TaskList)(nil), // 1: todo.TaskList
+	(*Text)(nil),     // 2: todo.Text
+	(*Void)(nil),     // 3: todo.Void
 }
 var file_todo_proto_depIdxs = []int32{
-	0, // 0: todo.TaskList.task:type_name -> todo.Task
-	1, // [1:1] is the sub-list for method output_type
-	1, // [1:1] is the sub-list for method input_type
+	0, // 0: todo.TaskList.tasks:type_name -> todo.Task
+	3, // 1: todo.Tasks.List:input_type -> todo.Void
+	2, // 2: todo.Tasks.Add:input_type -> todo.Text
+	1, // 3: todo.Tasks.List:output_type -> todo.TaskList
+	0, // 4: todo.Tasks.Add:output_type -> todo.Task
+	3, // [3:5] is the sub-list for method output_type
+	1, // [1:3] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name
 	1, // [1:1] is the sub-list for extension extendee
 	0, // [0:1] is the sub-list for field type_name
@@ -191,6 +289,30 @@ func file_todo_proto_init() {
 				return nil
 			}
 		}
+		file_todo_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Text); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_todo_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Void); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -198,9 +320,9 @@ func file_todo_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_todo_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMessages:   4,
 			NumExtensions: 0,
-			NumServices:   0,
+			NumServices:   1,
 		},
 		GoTypes:           file_todo_proto_goTypes,
 		DependencyIndexes: file_todo_proto_depIdxs,

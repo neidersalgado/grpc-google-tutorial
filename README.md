@@ -45,4 +45,4 @@ in gRPCTotorialjff we user and simple protobuf project CLI to add Tasks to do, a
 
 got generate in  folder  file .pb.go use this command 
 
->protoc -I . todo.proto --go_out=plugins=grpc:. 
+>>protoc -I . todo.proto --go_out=plugins=grpc:.  
